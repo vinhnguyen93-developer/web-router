@@ -1,0 +1,35 @@
+.is-hidden {
+  display: none;
+}
+
+.banner {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  height: 43rem;
+
+  background-image: url(../images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.banner .banner-title {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: bold;
+  font-size: 4rem;
+  margin-top: 90px;
+}
+
+.col-lg-6 .image-content {
+  height: 40rem;
+  border-radius: 5px;
+
+  background-image: url(../images/router.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.col-lg-6 .router-content {
+  line-height: 1.8;
+}
