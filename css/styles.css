@@ -33,3 +33,26 @@
 .col-lg-6 .router-content {
   line-height: 1.8;
 }
+
+.col-lg-4 .images .image-show {
+  height: 20rem;
+  width: 40rem;
+  border-radius: 5px;
+
+  background-position: center;
+  background-size: cover;
+}
+
+.pricing-table {
+  background-color: #dddee0 !important;
+}
+
+.panel .nav .active-card {
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+}
+
+.mb-7 {
+  margin-bottom: 70px;
+}
