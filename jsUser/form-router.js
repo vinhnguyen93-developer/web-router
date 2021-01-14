@@ -59,7 +59,6 @@ $(".btn-add-router").click(function() {
 
                 buildListRouter(router_current, recordRouter);
 
-                $(".txt-ma-router").val("");
                 $(".txt-name-router").val("");
                 $(".txt-namsx").val("");
                 $(".txt-noisx").val("");
@@ -76,8 +75,8 @@ $(".btn-update-router").click(function() {
     var nameRouter = $(".txt-name-router").val();
     var yearRouter = $(".txt-namsx").val();
     var addressRouter = $(".txt-noisx").val();
-    var maLoaiRouter = $(".txt-maloai").val();
-    var maNsxRouter = $(".txt-mansx").val();
+    var maLoaiRouter = $(".select-category").val();
+    var maNsxRouter = $(".select-producer").val();
     var infoRouter = $(".txt-info-router").val();
 
     bootbox.confirm("Bạn có chắc muốn cập nhật router " + idRouter + " này không?", function(result) {
@@ -105,8 +104,7 @@ $(".btn-update-router").click(function() {
                         alertSuccess("Cập nhật thành công !");
                         
                         buildListRouter(router_current, recordRouter);
-        
-                        $(".txt-ma-router").val("");
+
                         $(".txt-name-router").val("");
                         $(".txt-namsx").val("");
                         $(".txt-noisx").val("");
@@ -121,7 +119,6 @@ $(".btn-update-router").click(function() {
 });
 
 $(".btn-reset-router").click(function() {
-    $(".txt-ma-router").val("");
     $(".txt-name-router").val("");
     $(".txt-namsx").val("");
     $(".txt-noisx").val("");
@@ -204,8 +201,8 @@ $(".list-router").on("click", ".btn-change-router", function() {
     $(".txt-name-router").val(resallRouter[index].nameRouter);
     $(".txt-namsx").val(resallRouter[index].yearRouter);
     $(".txt-noisx").val(resallRouter[index].addressRouter);
-    $(".txt-maloai").val(resallRouter[index].maLoaiRouter);
-    $(".txt-mansx").val(resallRouter[index].maNsxRouter);
+    $(".select-category").val(resallRouter[index].maLoaiRouter);
+    $(".select-producer").val(resallRouter[index].maNsxRouter);
     $(".txt-info-router").val(resallRouter[index].infoRouter);
 });
 
@@ -227,7 +224,6 @@ $(".list-router").on("click", ".btn-delete-router", function() {
 
                     buildListRouter(router_current, recordRouter);
 
-                    $(".txt-ma-router").val("");
                     $(".txt-name-router").val("");
                     $(".txt-namsx").val("");
                     $(".txt-noisx").val("");
