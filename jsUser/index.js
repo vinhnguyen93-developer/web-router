@@ -118,4 +118,23 @@ function buildSlidePage(obj, codan, pageActive, totalPage) {
     }else {
         return record * (pageCurr + 1) - (record - 1);
     }
-  }
+}
+
+//Hàm logout
+function logout() {
+    localStorage.removeItem("emailUser");
+    localStorage.removeItem("nameUser");
+  
+    location.href ="login.html";
+}
+
+function buildUserDropdown() {
+    var user = localStorage.getItem("emailUser");
+    var nameUser = localStorage.getItem("nameUser");
+
+    if(user == undefined || user == null || user == "") {
+        location.href="login.html";
+    } else {
+        $(".username").html(nameUser);
+    }	
+}

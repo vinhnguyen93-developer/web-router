@@ -17,7 +17,7 @@ $(".btn-login").click(function() {
 
             if(res.event == 1) {
                 if($(".remember").is(":checked")) {
-                    localStorage.setItem("rememberBS", true);
+                    localStorage.setItem("nameUser", res.items.nameUser);
                     localStorage.setItem("emailUser", res.items.email);
                 }
                 

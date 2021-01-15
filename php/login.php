@@ -7,7 +7,7 @@ switch ($event) {
         $email = $_POST['email'];
         $passwordUser = md5($_POST['password']);
         
-		$sql = mysqli_query($conn, "select email from users where email='".$email."' and passwordUser='".$passwordUser."'"); 
+		$sql = mysqli_query($conn, "select email, nameUser from users where email='".$email."' and passwordUser='".$passwordUser."'"); 
 
         $t = '';
 
@@ -15,6 +15,7 @@ switch ($event) {
         {
             
             $userTemp['email'] = $rows['email'];
+            $userTemp['nameUser'] = $rows['nameUser'];
 
             $t=$rows['email'];
         }
