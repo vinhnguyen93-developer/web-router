@@ -111,8 +111,8 @@ function buildSlidePage(obj, codan, pageActive, totalPage) {
     obj.html(html);
 }
   
-  //hàm in số thứ tự page
-  function printSTT(record, pageCurr) {
+//hàm in số thứ tự page
+function printSTT(record, pageCurr) {
     if((pageCurr + 1) == 1) {
         return 1;
     }else {
@@ -120,12 +120,16 @@ function buildSlidePage(obj, codan, pageActive, totalPage) {
     }
 }
 
+$(".btn-logout").click(function() {
+    logout();
+});
+
 //Hàm logout
 function logout() {
     localStorage.removeItem("emailUser");
     localStorage.removeItem("nameUser");
   
-    location.href ="login.html";
+    location.href = "login.html";
 }
 
 function buildUserDropdown() {
@@ -133,8 +137,29 @@ function buildUserDropdown() {
     var nameUser = localStorage.getItem("nameUser");
 
     if(user == undefined || user == null || user == "") {
-        location.href="login.html";
+        location.href = "./login.html";
+    } else if(user == "admin") {
+        $(".menu-user").css({'display': 'block'});
+        $(".display").css({'display': 'block'});
+        $(".username").html(nameUser);
     } else {
+        $(".display").css({'display': 'block'});
         $(".username").html(nameUser);
     }	
+};
+
+function checkUser() {
+    var user = localStorage.getItem("emailUser");
+    var nameUser = localStorage.getItem("nameUser");
+
+    if(user == "admin") {
+        $(".menu-user").css({'display': 'block'});
+        $(".display").css({'display': 'block'});
+        $(".username").html(nameUser);
+    } else if(user == null) {
+        return;
+    } else {
+        $(".display").css({'display': 'block'});
+        $(".username").html(nameUser);
+    }
 }

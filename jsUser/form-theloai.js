@@ -157,3 +157,5 @@ $(".list-category").on("click", ".btn-delete-category", function() {
         }
     );
 });
+
+buildUserDropdown();

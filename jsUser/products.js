@@ -73,3 +73,5 @@ $(".page-number").on('click', 'button', function() {
 
     buildListRouter(router_current, recordRouter);
 });
+
+checkUser();

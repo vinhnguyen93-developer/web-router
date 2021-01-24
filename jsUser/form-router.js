@@ -129,11 +129,22 @@ buildListRouter(router_current, recordRouter);
 
 //hàm hiển thị dữ liệu lên table
 function buildListRouter(page, record) {
-   
-    var dataSend = {
-		event: "getListRouter",
-		page: page,
-        record: record
+    var user = localStorage.getItem("emailUser");
+    var dataSend;
+
+    if(user == "admin") {
+        dataSend = {
+            event: "getListRouter",
+            page: page,
+            record: record
+        }
+    } else {
+        dataSend = {
+            event: "getListRouterCustomer",
+            page: page,
+            record: record,
+            user: user
+        }
     }
     
     $(".list-router").html("<img src='images/input-spinner.gif' width='5px' height='5px'/>");
@@ -286,3 +297,5 @@ function buildHTMLProducerData(res) {
         }
     }
 };
+
+buildUserDropdown();

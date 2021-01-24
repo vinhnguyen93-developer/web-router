@@ -193,3 +193,5 @@ $(".list-producer").on("click", ".btn-delete-producer", function() {
         }
     );
 });
+
+buildUserDropdown();
