@@ -129,7 +129,7 @@ function logout() {
     localStorage.removeItem("emailUser");
     localStorage.removeItem("nameUser");
   
-    location.href = "login.html";
+    location.href = "../index.html";
 }
 
 function buildUserDropdown() {

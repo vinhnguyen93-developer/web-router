@@ -54,7 +54,7 @@ $(".btn-update-user").click(function() {
         if (result == true) {
             if(name == "") {
                 alertInfo("Tên không được để trống !");
-            } else if(phone != 10 || isNumber(phone) == false) {
+            } else if(phone.length != 10 || isNumber(phone) == false) {
                 alertInfo("Số điện thoại không hợp lệ !");
             } else if(password == "") {
                 alertInfo("Mật khẩu không được để trống !");

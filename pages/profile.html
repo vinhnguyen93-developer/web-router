@@ -88,24 +88,24 @@
 
           <div class="top-nav hr-top-nav display">
             <ul class="nav pull-right top-menu">
-              <!-- user login dropdown start-->
-              <li class="dropdown">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                  <img alt="" src="#" />
-                  <span class="username"></span>
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu extended logout">
-                  <li>
-                    <a href="./profile.html"><i class="fa fa-suitcase"></i>Profile</a>
-                  </li>
-                  <li class="btn-logout">
-                    <a href="#"><i class="fa fa-key btn-logout"></i> Log Out</a>
-                  </li>
-                </ul>
-              </li>
-              <!-- user login dropdown end -->
-            </ul>
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <img alt="" src="#" />
+                    <span class="username"></span>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu extended logout">
+                    <li>
+                      <a href="./profile.html"><i class="fa fa-suitcase"></i>Profile</a>
+                    </li>
+                    <li class="btn-logout">
+                      <a href="#"><i class="fa fa-key btn-logout"></i> Log Out</a>
+                    </li>
+                  </ul>
+                </li>
+                <!-- user login dropdown end -->
+              </ul>
           </div>
         </div>
       </header>
@@ -115,20 +115,42 @@
       <section id="main-content">
         <section class="wrapper">
           <!-- page start-->
-          <div class="row">
-            <div class="col-lg-12">
-              <!--breadcrumbs start -->
-              <ul class="breadcrumb title-breadcrumb">
-                <li class="active"><a href="#"><i class="fa fa-bars"></i> Routers</a></li>
-              </ul>
-              <!--breadcrumbs end -->
+            <div class="row">
+                <div class="col-md-12">
+                    <section class="panel show-profile">
+                        
+                    </section>
+
+                    <!-- modal change avatar start -->
+                    <div class="show-modal-update modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h3 class="modal-title">Cập nhật tài khoản<i class="title_mamon_outline"></i></h3>
+                          </div>
+
+                          <div class="modal-body" align="center">
+                            <form class="form-signin">
+                              <div>
+                                <input type="hidden" class="form-control txt-email">
+                                <input type="text" class="form-control txt-name" placeholder="Họ và tên" autofocus>
+                                <input type="text" class="form-control txt-phone" placeholder="Số điện thoại" autofocus>
+                                <input type="password" class="form-control txt-password" placeholder="Mật khẩu mới" autofocus>
+                              </div>
+                            </form>
+                          </div>
+
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btn-update-user">Cập nhật</button>
+                            <button data-dismiss="modal" class="btn btn-default" type="button">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- modal change avatar end -->
+                </div>
             </div>
-          </div>
-
-          <div class="row show-router">
-          </div>
-
-          <div class="page-number"></div>
         </section>
       </section>
       <!--main content end-->
@@ -172,6 +194,6 @@
 
     <!-- Js user custom -->
     <script src="../jsUser/index.js"></script>
-    <script src="../jsUser/products.js"></script>
+    <script src="../jsUser/profile.js"></script>
   </body>
 </html>

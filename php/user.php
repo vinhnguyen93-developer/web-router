@@ -42,9 +42,9 @@ switch ($event) {
         $email = $_POST['email'];
         $name = $_POST['name'];
         $phone = $_POST['phone'];
-        $password = $_POST['password'];
+        $password = md5($_POST['password']);
 
-        $sql = "UPDATE `producers` 
+        $sql = "UPDATE `users` 
                 SET nameUser='".$name."', phone='".$phone."', passwordUser='".$password."'
                 WHERE email='".$email."'";
        
@@ -89,7 +89,28 @@ switch ($event) {
 		
         echo json_encode($jsonData);
 		mysqli_close($conn);
-		break;
+        break;
+    case "getUserLocal":
+        $email = $_POST['email'];
+    
+        $arr = array();
+        $sql = mysqli_query($conn, "select email, nameUser, phone, gender from users where email= '".$email."'"); 
+
+        while($rows = mysqli_fetch_array($sql))
+        {
+            $id = $rows['email'];
+            $userTemp['email'] = $rows['email'];
+            $userTemp['nameUser'] = $rows['nameUser'];
+            $userTemp['phone'] = $rows['phone'];
+            $userTemp['gender'] = $rows['gender'];
+            
+            $arr[$id] = $userTemp;
+        }
+        $jsonData['items'] = $arr;
+        
+        echo json_encode($jsonData);
+        mysqli_close($conn);
+        break;
     default:
         # code...
         break;

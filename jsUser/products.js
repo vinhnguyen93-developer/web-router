@@ -45,7 +45,7 @@ function buildHTMLRouterData(res) {
                     '<section class="panel">' +
                         '<div class="user-heading alt gray-bg">' +
                             '<h1>' + list.nameRouter + '</h1>' +
-                            '<p>' + list.dayPost + '</p>' +
+                            '<p>Ngày đăng: ' + list.dayPost + '</p>' +
                         '</div>' +
 
                         '<ul class="nav nav-pills nav-stacked">' +
@@ -53,7 +53,6 @@ function buildHTMLRouterData(res) {
                             '<li><a href="javascript:;"><i class="fa fa-globe"></i>Nơi sản xuất: ' + list.addressRouter + '</a></li>' +
                             '<li><a href="javascript:;"><i class="fa fa-briefcase"></i>Cty sản xuất: ' + list.nameProducer + '</a></li>' +
                             '<li><a href="javascript:;"><i class="fa fa-envelope-o"></i>Loại router: ' + list.nameCategory + '</a></li>' +
-                            '<li class="active-card"><button class="btn btn-primary">Xem chi tiết</button></li>' +
                         '</ul>' +
                     '</section>' +
                 '</aside>' +
