@@ -60,14 +60,14 @@ $(".btn-update-user").click(function() {
                 alertInfo("Mật khẩu không được để trống !");
             } else {
                 var data = {
-                    event: "update",
+                    event: "updateByAdmin",
                     email: email,
                     name: name,
-                    phone: phone,
-                    password: password
+                    phone: phone
                 };
         
                 queryDataPost("../php/user.php", data, function(res) {
+                    console.log(res);
                     if(res.update == 1) {
                         alertSuccess("Cập nhật thành công !");
                         

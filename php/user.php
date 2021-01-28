@@ -47,8 +47,30 @@ switch ($event) {
         $sql = "UPDATE `users` 
                 SET nameUser='".$name."', phone='".$phone."', passwordUser='".$password."'
                 WHERE email='".$email."'";
+
+        mysqli_query($conn, $sql);
        
-        if (mysqli_query($conn, $sql)) {
+        if (mysqli_affected_rows($conn) > 0) {
+            $res[$event] = 1;
+        } else {
+            $res[$event] = 0;
+        }
+        
+        echo json_encode($res);
+        mysqli_close($conn);
+        break;
+    case "updateByAdmin":
+        $email = $_POST['email'];
+        $name = $_POST['name'];
+        $phone = $_POST['phone'];
+
+        $sql = "UPDATE `users` 
+                SET nameUser='".$name."', phone='".$phone."'
+                WHERE email='".$email."'";
+
+        mysqli_query($conn, $sql);
+        
+        if (mysqli_affected_rows($conn) > 0) {
             $res[$event] = 1;
         } else {
             $res[$event] = 0;
